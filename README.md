@@ -56,7 +56,8 @@ Section 3: ( Add Nginx )
 Copy the contents of nginx to the folder nginx like in this repository to 
 your newly created project.
 Or, add the following contents to your nginx file manually:
-'''
+
+'
 server 
 
 {
@@ -82,13 +83,13 @@ location = /50x.html
 { root /usr/share/nginx/html; }
 
 }
-'''
+'
 
 Section 4: ( Add Dockerfile )
 Create Dockerfile and .dockerignore in your root folder and copy contents from this repository.
 Add following content to Dockerfile if you want to do manually:
 
-'''
+'
 FROM node:12.18.1-alpine3.9 as build 
 
 WORKDIR /app 
@@ -114,7 +115,7 @@ rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/conf.d 
 
 EXPOSE 80 CMD ["nginx", "-g", "daemon off;"]
-'''
+'
 
 Section 5: ( Understand package.json )
 Our package.json has all the dependencies our nextjs app needs so far with the scripts that
