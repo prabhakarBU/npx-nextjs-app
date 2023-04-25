@@ -2,9 +2,9 @@ FROM node:12.16.1-alpine3.9 as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY ./package.json /app/
-RUN yarn --silent
+RUN npm run --silent
 COPY . /app
-RUN yarn build
+RUN npm run build
 
 FROM nginx:1.17.8-alpine
 COPY --from=build /app/build /usr/share/nginx/html
